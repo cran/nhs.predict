@@ -1,0 +1,8 @@
+1e63c8f9edda979b402100187462737c *DESCRIPTION
+6467898d87b2c3948eb49eba244f389c *NAMESPACE
+6b33882a73c8a1a80137122e99f08b94 *R/predict.os.R
+994e05ec1fc1a2d3d09fb4790f15eb14 *R/predict.rfs.R
+4bb08ad3e49e7c08366ae225679ca5b0 *data/example_data.rda
+270b8a60792a3bbcb46e047c739b44a8 *man/data.Rd
+6bc356853d4444adb71f3886eaa874ce *man/os.predict.Rd
+dc48504407611bc04ceb8892dc4e6cbc *man/rfs.predict.Rd
