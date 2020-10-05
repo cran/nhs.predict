@@ -22,17 +22,17 @@ rfs.predict(
 )
 }
 \arguments{
-\item{data}{A dataframe containg patient data with the necessary variables.}
+\item{data}{A dataframe containing patient data with the necessary variables.}
 
 \item{year}{Numeric, Specify the year since surgery for which the predictions are calculated, ranges between 1 and 15. Default at 10.}
 
 \item{age.start}{Numeric, Age at diagnosis of the patient. Range between 25 and 85.}
 
-\item{screen}{Numeric, Clinically detected = 0, Screen detected = 1.}
+\item{screen}{Numeric, Clinically detected = 0, Screen detected = 1, Unknown = 2.}
 
-\item{size}{Numeric, Tumour size in millimiters.}
+\item{size}{Numeric, Tumor size in millimeters.}
 
-\item{grade}{Numeric, Tumour grade. Values: 1,2,3. Missing=9.}
+\item{grade}{Numeric, Tumor grade. Values: 1,2,3. Missing=9.}
 
 \item{nodes}{Numeric, Number of positive nodes.}
 
@@ -42,13 +42,13 @@ rfs.predict(
 
 \item{ki67}{Numeric, ki67 status, KI67+ = 1, KI67- = 0, Unknown = 9.}
 
-\item{generation}{Numeric, Chemotherapy generation. Values: 0,2,3.}
+\item{generation}{Numeric, Chemotherapy generation. Values: 0,2,3. If value is missing, default=3.}
 
-\item{horm}{Numeric, Hormone therapy, Yes = 1, No = 0.}
+\item{horm}{Numeric, Hormone therapy, Yes = 1, No = 0. If value is missing, default= er status.}
 
-\item{traz}{Numeric, Trastuzumab therapy, Yes = 1, No = 0.}
+\item{traz}{Numeric, Trastuzumab therapy, Yes = 1, No = 0. If value is missing, default= her2 status.}
 
-\item{bis}{Numeric, Bisphosphonate therapy, Yes = 1, No = 0.}
+\item{bis}{Numeric, Bisphosphonate therapy, Yes = 1, No = 0. if value is missing, default=1.}
 }
 \value{
 The function attaches additional columns to the dataframe, matched for patient observation,

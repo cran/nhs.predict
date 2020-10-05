@@ -2,3 +2,5 @@
 
 export(os.predict)
 export(rfs.predict)
+export(scan.predict)
+importFrom(stats,complete.cases)

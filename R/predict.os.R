@@ -2,20 +2,20 @@
 #'
 #'@description  Calculates 'NHS Predict' v2.1 Overall survival and therapy benefits
 #'
-#'@param data A dataframe containg patient data with the necessary variables.
+#'@param data A dataframe containing patient data with the necessary variables.
 #'@param year Numeric, Specify the year since surgery for which the predictions are calculated, ranges between 1 and 15. Default at 10.
 #'@param age.start Numeric, Age at diagnosis of the patient. Range between 25 and 85.
-#'@param screen Numeric, Clinically detected = 0, Screen detected = 1.
-#'@param size Numeric, Tumour size in millimiters.
-#'@param grade Numeric, Tumour grade. Values: 1,2,3. Missing=9.
+#'@param screen Numeric, Clinically detected = 0, Screen detected = 1, Unknown = 2.
+#'@param size Numeric, Tumor size in millimeters.
+#'@param grade Numeric, Tumor grade. Values: 1,2,3. Missing=9.
 #'@param nodes Numeric, Number of positive nodes.
 #'@param er Numeric, ER status, ER+ = 1, ER- = 0.
 #'@param her2 Numeric, HER2 status, HER2+ = 1, HER2- = 0. Unknown = 9.
 #'@param ki67 Numeric, ki67 status, KI67+ = 1, KI67- = 0, Unknown = 9.
-#'@param generation Numeric, Chemotherapy generation. Values: 0,2,3.
+#'@param generation Numeric, Chemotherapy generation. Values: 0,2,3..
 #'@param horm Numeric, Hormone therapy, Yes = 1, No = 0.
 #'@param traz Numeric, Trastuzumab therapy, Yes = 1, No = 0.
-#'@param bis Numeric, Bisphosphonate therapy, Yes = 1, No = 0.
+#'@param bis Numeric, Bisphosphonate therapy, Yes = 1, No = 0..
 #'
 #'@return The function attaches additional columns to the dataframe, matched for patient observation,
 #'    containing Overall survival at the specified year, plus the additional benefit for each type of therapy.
@@ -253,7 +253,6 @@ os.predict <- function(data,year=10,age.start,screen,size,grade,nodes,er,her2,ki
     chemo.ben <- round(benefits2.1[year,6]-benefits2.1[year,2],2) #Chemotherapy benefit
     traz.ben <- round(benefits2.1[year,12]-benefits2.1[year,6],2) #Trastuzumab benefit
     bis.ben <- round(benefits2.1[year,16]-benefits2.1[year,12],2) #Bisphosphonate benefit
-
     return(c(Overall,horm.ben,chemo.ben,traz.ben,bis.ben))
   }
 
